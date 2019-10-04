@@ -1,1 +1,1 @@
-# simple-telegram-notifications
+# Simple Telegram Notifications
