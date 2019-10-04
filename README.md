@@ -18,16 +18,8 @@ If you want to receive private notifications in Telegram from your web app here 
 
 ### 3. Get Chat ID
 1. Add @RawDataBot bot to your group chat
-2. Get Chat ID from the JSON That you've got from @RawDataBot. Should be something like:
-[code]
-"chat": {
-            "id": -843463531,
-            "title": "Show HN Top",
-            "type": "group",
-            "all_members_are_administrators": true
-        },
-[/code]
-
+2. Get Chat ID from the JSON That you've got from @RawDataBot
+3. Remove @RawDataBot from your chat 
 
 ### 4. Test your bot
 1. Select a code snippet bellow
