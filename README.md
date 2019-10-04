@@ -5,3 +5,11 @@ If you want to receive private notifications in Telegram from your web app here 
 ## Node.js
 
 [Click to view](https://github.com/AndreyAzimov/simple-telegram-notifications/blob/master/sendTelegram.js)
+
+## Ruby
+
+[Click to view](https://github.com/AndreyAzimov/simple-telegram-notifications/blob/master/send_telegram.rb)
+
+## PHP
+
+[Click to view](https://github.com/AndreyAzimov/simple-telegram-notifications/blob/master/send_telegram.php)
