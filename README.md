@@ -7,7 +7,7 @@ If you want to receive private notifications from your web app in Telegram  here
 ### 1. Create a bot
 
 1. Find @BotFather in Telegram
-2. /newbot
+2. `/newbot`
 3. Choose a name
 4. Choose a username
 5. Get token. Should be something like: 992382811:DKyqVhUJsjP-uJivOf2yQi5MuUVvsRyRaZMh
