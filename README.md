@@ -2,6 +2,8 @@
 
 If you want to receive private notifications from your web app in Telegram  here are simple code snippets on Node.js, Ruby and PHP that will allow you to do it.
 
+You can have 1 bot fot many channel. Once you've create a bot. You can add it to another channel (skip step 1 and start with step 2)
+
 ## Pre Requirements
 
 ### 1. Create a bot
