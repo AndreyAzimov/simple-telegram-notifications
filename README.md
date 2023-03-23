@@ -31,12 +31,87 @@ You can have 1 bot fot many channel. Once you've create a bot. You can add it to
 
 ## Node.js
 
-[Click to view](https://github.com/AndreyAzimov/simple-telegram-notifications/blob/master/sendTelegram.js)
+```javascript
+// where package.json is located: `npm install node-fetch`
+// or `npm install -g node-fetch` to install globally
+const fetch = require("node-fetch");
+const sendTelegram = async (message) => {
+	const token = "YOUR_BOT_TOKEN";
+	const data = Object.entries({
+	    	text: message,
+	    	chat_id: "YOUR_CHAT_ID",
+	    	parse_mode: "html"
+	    })
+	    .map(entry => entry[0] + "=" + entry[1])
+	    .join("&");
+
+	const url = `https://api.telegram.org/bot${token}/sendMessage?${data}`;
+	console.log(`url: ${url}`);
+	const response = await fetch(url);
+	const json = await response.json();
+	console.log(json);
+	return json;	
+};
+
+sendTelegram("hi!");
+```
 
 ## Ruby
 
-[Click to view](https://github.com/AndreyAzimov/simple-telegram-notifications/blob/master/send_telegram.rb)
+```ruby
+require "open-uri"
+
+class Telegram
+
+  def send_telegram(message)
+      token = "YOUR_TOKEN"
+      
+      data = {
+        text: message,
+        chat_id: "YOUR_CHAT_ID"
+      }
+      url = "https://api.telegram.org/bot#{token}/sendMessage?#{data.to_param}&parse_mode=html"
+      puts "telegram url: " + url
+      open(url).read
+    end
+    
+    send_telegram("hi!")
+end
+```
 
 ## PHP
 
-[Click to view](https://github.com/AndreyAzimov/simple-telegram-notifications/blob/master/send_telegram.php)
+```php
+<?php
+function send_telegram($message) {
+	$token = "YOUR_TOKEN";
+	$data = [
+		'text' => $message,
+		'chat_id' => 'YOUR_CHAT_ID'
+	];
+
+	file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data) . "&parse_mode=html");
+}
+
+send_telegram("hi!")
+```
+
+## Python
+
+```python
+import urllib.parse
+import urllib.request
+
+def send_telegram(message):
+    token = "YOUR_TOKEN"
+    
+    data = {
+        'text': message,
+        'chat_id': 'YOUR_CHAT_ID'
+    }
+    url = f"https://api.telegram.org/bot{token}/sendMessage?{urllib.parse.urlencode(data)}&parse_mode=html"
+    response = urllib.request.urlopen(url)
+    return response.read().decode()
+
+send_telegram("hi!")
+```
